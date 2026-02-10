@@ -24,7 +24,7 @@ async def health_check():
     return {"status": "ok"}
 
 
-app.include_router(auth_router)
-app.include_router(patients_router)
-app.include_router(visits_router)
-app.include_router(followups_router)
+app.include_router(auth_router, prefix=settings.API_V1_STR)
+app.include_router(patients_router, prefix=settings.API_V1_STR)
+app.include_router(visits_router, prefix=settings.API_V1_STR)
+app.include_router(followups_router, prefix=settings.API_V1_STR)
